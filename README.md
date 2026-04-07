@@ -28,7 +28,6 @@ merns_project/
     └── package.json          # Frontend dependencies
 ```
 
-## Getting Started
 
 ### 1. Backend Setup
 1. Open a terminal and navigate to the `backend` directory: `cd backend`
@@ -40,3 +39,8 @@ merns_project/
 1. Open a new terminal and navigate to the `frontend` directory: `cd frontend`
 2. Install dependencies: `npm install`
 3. Start the Vite development server: `npm run dev`
+
+### For Running
+1. Go to the forntend folder
+2. type npm run dev
+3. In terminal
