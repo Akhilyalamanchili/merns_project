@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Notes App</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="auth-container animate-fade-in">
+        <div class="auth-card card">
+            <div class="auth-header">
+                <div class="auth-icon-wrapper">
+                    <i data-lucide="lock" class="auth-icon"></i>
+                </div>
+                <h1>Welcome Back</h1>
+                <p>Enter your details to access your notes.</p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <div class="input-with-icon">
+                        <i data-lucide="mail" class="input-icon" style="width: 18px; height: 18px;"></i>
+                        <input type="email" id="email" name="email" class="input-control" placeholder="you@example.com"
+                            required />
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i data-lucide="lock" class="input-icon" style="width: 18px; height: 18px;"></i>
+                        <input type="password" id="password" name="password" class="input-control"
+                            placeholder="••••••••" required />
+                    </div>
+                </div>
+
+                <div class="auth-actions">
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn btn-primary auth-submit">
+                    <span>Sign In</span>
+                    <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialization Script -->
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "69d098c78ad7bd4f703fecac",
+    "title": "Belman_ford_adsa",
+    "content": "<p><br></p>",
+    "category": "Private",
+    "author": "69d08f99053b2bf5bad14e20",
+    "pdfUrl": "uploads/1775278279539.pdf",
+    "createdAt": "2026-04-04T04:51:19.585Z",
+    "updatedAt": "2026-04-04T04:51:19.585Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d098f48ad7bd4f703fecb4",
+    "title": "disjointset_adsa",
+    "content": "<p><br></p><p><br></p>",
+    "category": "Private",
+    "author": "69d08f99053b2bf5bad14e20",
+    "pdfUrl": "uploads/1775278324055.pdf",
+    "createdAt": "2026-04-04T04:52:04.103Z",
+    "updatedAt": "2026-04-04T04:52:04.103Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d0af598ad7bd4f703fecc5",
+    "title": "Adsa_disjoint_set",
+    "content": "<p>FULL Explanation of disjoint set:</p><p> In the attached pdf</p>",
+    "category": "Public",
+    "author": "69be1e7907d9e6b967db94ba",
+    "createdAt": "2026-04-04T06:27:37.918Z",
+    "updatedAt": "2026-04-04T07:18:33.589Z",
+    "__v": 0,
+    "pdfUrl": "uploads/1775287113572.pdf"
+  },
+  {
+    "_id": "69d0de6a966470c80805790c",
+    "title": "Test PDF Note",
+    "content": "Testing upload",
+    "category": "Public",
+    "author": "69d0de6a966470c808057909",
+    "pdfUrl": "uploads/1775296106662.pdf",
+    "createdAt": "2026-04-04T09:48:26.669Z",
+    "updatedAt": "2026-04-04T09:48:26.669Z",
+    "__v": 0
+  }
+]

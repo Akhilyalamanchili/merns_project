@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Notes App</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+    <!-- Quill.js CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <div class="brand-logo">N</div>
+                    <h2>Notes</h2>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <p class="nav-label">CATEGORIES</p>
+                    <ul class="category-list" id="category-list">
+                        <li>
+                            <button class="category-item active" data-category="All">
+                                <i data-lucide="tag" style="width: 16px; height: 16px;"></i>
+                                <span>All</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-item" data-category="Private">
+                                <i data-lucide="tag" style="width: 16px; height: 16px;"></i>
+                                <span>Private</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-item" data-category="Public">
+                                <i data-lucide="tag" style="width: 16px; height: 16px;"></i>
+                                <span>Public</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar" id="user-avatar-initials">--</div>
+                    <div class="user-info">
+                        <p class="user-name" id="user-name">Loading...</p>
+                        <p class="user-email" id="user-email">...</p>
+                    </div>
+                    <button class="icon-btn logout-btn" id="logout-btn" title="Logout">
+                        <i data-lucide="log-out" style="width: 16px; height: 16px;"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="search-bar">
+                    <i data-lucide="search" class="search-icon" style="width: 18px; height: 18px;"></i>
+                    <input type="text" id="search-input" placeholder="Search notes..." class="search-input" />
+                </div>
+
+                <button class="btn btn-primary create-btn" id="create-note-btn">
+                    <i data-lucide="plus" style="width: 18px; height: 18px;"></i>
+                    <span>New Note</span>
+                </button>
+            </header>
+
+            <div class="notes-container">
+                <div class="notes-header">
+                    <h2 id="current-category-title">All Notes</h2>
+                    <span class="notes-count" id="notes-count">0 notes</span>
+                </div>
+
+                <!-- Notes Grid Container -->
+                <div class="notes-grid" id="notes-grid">
+                    <!-- Notes will be injected here via JS -->
+                </div>
+
+                <!-- Empty State Container -->
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <div class="empty-icon-wrapper">
+                        <i data-lucide="search" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3>No notes found</h3>
+                    <p>Get started by creating a new note or modifying your search.</p>
+                    <button class="btn btn-primary" id="empty-state-create-btn">
+                        Create Your First Note
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Note Modal -->
+        <div class="modal-overlay" id="note-modal">
+            <div class="modal-content-box">
+                <div class="modal-header">
+                    <h2 id="modal-title">Create Note</h2>
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="icon-btn" id="maximize-modal-btn" title="Toggle Fullscreen">
+                            <i data-lucide="maximize" style="width: 20px; height: 20px;"></i>
+                        </button>
+                        <button type="button" class="icon-btn close-btn" id="close-modal-btn">
+                            <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <form id="note-form" class="modal-form">
+                    <input type="hidden" id="note-id-input">
+                    <div class="input-group">
+                        <input type="text" id="note-title-input" placeholder="Note Title"
+                            class="input-control title-input" required />
+                    </div>
+                    <div class="input-group">
+                        <select id="note-category-input" class="input-control category-select">
+                            <option value="">No Category</option>
+                            <option value="Private">Private</option>
+                            <option value="Public">Public</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" style="margin: 16px 0; padding: 16px; background-color: #f1f5f9; border-radius: 8px;">
+                        <span style="display:block; font-weight: 600; margin-bottom: 12px; color: #1e293b;">
+                          <i data-lucide="file-text" style="width:18px; height: 18px; vertical-align: text-bottom; margin-right: 4px;"></i> Attach PDF to Note
+                        </span>
+                        <div id="current-pdf-display" style="margin-bottom: 8px; font-size: 0.9rem; color: #4338ca; display: none;"></div>
+                        <input type="file" id="note-pdf-input" accept="application/pdf" class="input-control" style="background: white; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%; cursor: pointer;" />
+                    </div>
+
+                    <div class="input-group" style="display: flex; flex-direction: column; flex: 1; min-height: 250px;">
+                        <!-- Quill Editor Container -->
+                        <div id="quill-editor" style="flex: 1; display: flex; flex-direction: column;"></div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-modal-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="save-note-btn">Save Note</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Quill.js CDN -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- date-fns (vanilla build via unpkg) -->
+    <script src="https://unpkg.com/date-fns@2.30.0/dist/date-fns.min.js"></script>
+
+    <!-- Dashboard Logic -->
+    <script src="./js/dashboard.js"></script>
+</body>
+
+</html>
