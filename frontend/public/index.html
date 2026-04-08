@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - Organize your mind</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="home-container">
+        <nav class="home-nav">
+            <div class="brand">
+                <div class="brand-logo">N</div>
+                <h2>Notes</h2>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary">Log in</a>
+                <a href="register.html" class="btn btn-primary">Sign up</a>
+            </div>
+        </nav>
+
+        <main class="home-main">
+            <section class="hero-section">
+                <div class="hero-content animate-fade-in">
+                    <h1 class="hero-title">
+                        Organize your mind, <br />
+                        <span class="text-gradient">effortlessly.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        The modern, beautiful, and secure way to capture your thoughts, ideas, and daily tasks all in one place.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="register.html" class="btn btn-primary btn-large">
+                            Get Started for Free
+                            <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <div class="features-grid">
+                    <div class="feature-card card slide-in">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="zap" class="feature-icon"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Capture your notes instantly with a fast, responsive interface designed for speed.</p>
+                    </div>
+
+                    <div class="feature-card card slide-in" style="animation-delay: 0.1s;">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="book-open" class="feature-icon"></i>
+                        </div>
+                        <h3>Beautifully Organized</h3>
+                        <p>Sort your thoughts with categories and tags, featuring a stunning masonry and grid layout.</p>
+                    </div>
+
+                    <div class="feature-card card slide-in" style="animation-delay: 0.2s;">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="shield" class="feature-icon"></i>
+                        </div>
+                        <h3>Private & Secure</h3>
+                        <p>Your notes are exclusively yours. End-to-end security ensures your ideas stay private.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="home-footer">
+            <p id="footer-year"></p>
+        </footer>
+    </div>
+
+    <!-- Initialization Script -->
+    <script src="./js/home.js"></script>
+</body>
+</html>

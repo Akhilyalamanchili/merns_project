@@ -1,0 +1,22 @@
+/* Dashboard CSS adjustments for Quill */
+.quill-editor {
+    height: 350px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quill-editor .ql-container {
+    font-family: inherit;
+    font-size: 1rem;
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    flex: 1;
+    overflow-y: auto;
+}
+
+.quill-editor .ql-toolbar {
+    border-top-left-radius: var(--radius-md);
+    border-top-right-radius: var(--radius-md);
+    font-family: inherit;
+}
